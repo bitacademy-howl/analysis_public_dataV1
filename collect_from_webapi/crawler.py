@@ -29,10 +29,16 @@ def crawlling_tourspot_visitor(district, start_year, end_year):
                     preprocess_post(post)
                 results.extend(posts)
 
-                # save results to file (저장/적재)
-                with open(filename, 'w', encoding='utf-8') as outfile:
-                    json_String = json.dumps(results, indent=4, sort_keys=True, ensure_ascii=False)
-                    outfile.write(json_String)
+    # save results to file (저장/적재)
+    with open(filename, 'w', encoding='utf-8') as outfile:
+        json_String = json.dumps(results, indent=4, sort_keys=True, ensure_ascii=False)
+        outfile.write(json_String)
+
+    print(results)
+    # save results to file (저장/적재)
+    with open(filename, 'w', encoding='utf-8') as outfile:
+        json_String = json.dumps(results, indent=4, sort_keys=True, ensure_ascii=False)
+        outfile.write(json_String)
 
 if os.path.exists(RESULT_DIRECTORY) is False:
     os.makedirs(RESULT_DIRECTORY)
